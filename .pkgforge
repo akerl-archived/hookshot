@@ -1,0 +1,26 @@
+name 'hookshot'
+org 'akerl'
+
+source(
+  type: 'git',
+  path: '.'
+)
+
+build do
+  run 'make'
+  cp 'payload.zip'
+end
+
+package(
+  type: 'file',
+  artifacts: [
+    {
+      source: 'payload.zip',
+      name: 'payload.zip'
+    }
+  ]
+)
+
+test do
+  # TODO: add tests
+end

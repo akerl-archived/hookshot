@@ -1,0 +1,7 @@
+/.gopath
+/bin
+/vendor/
+/pkg/
+/.github
+handler.so
+payload.zip
