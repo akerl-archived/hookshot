@@ -10,22 +10,22 @@ import (
 )
 
 const (
-	KEY     = "HOOKSHOT_URLS"
-	FAIL    = "Failed to hit URL %d"
-	SUCCESS = "Success! Hit %d URLs"
+	envKey     = "HOOKSHOT_URLS"
+	failMsg    = "Failed to hit URL %d"
+	successMsg = "Success! Hit %d URLs"
 )
 
-var URLS []string
+var urls []string
 
 // Handle responds to lambda invocations by hitting all known URLs
 func Handle(_ interface{}, _ *runtime.Context) (string, error) {
-	for index, url := range URLS {
+	for index, url := range urls {
 		err := hitURL(url)
 		if err != nil {
-			return fmt.Sprintf(FAIL, index), fmt.Errorf(FAIL, index)
+			return fmt.Sprintf(failMsg, index), fmt.Errorf(failMsg, index)
 		}
 	}
-	return fmt.Sprintf(SUCCESS, index), nil
+	return fmt.Sprintf(successMsg, len(urls)), nil
 }
 
 func hitURL(url string) error {
@@ -34,11 +34,11 @@ func hitURL(url string) error {
 }
 
 func init() {
-	urlString := os.GetEnv(ENV_KEY)
-	if urls == "" {
+	urlString := os.Getenv(envKey)
+	if urlString == "" {
 		panic("No URLs provided")
 	}
-	URLS = strings.Split(urlString, "|")
+	urls = strings.Split(urlString, "|")
 }
 
 func main() {}
