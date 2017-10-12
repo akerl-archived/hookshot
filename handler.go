@@ -27,10 +27,19 @@ func Handle(_ interface{}, _ *runtime.Context) (string, error) {
 	for index, url := range urls {
 		err := hitURL(url)
 		if err != nil {
-			return fmt.Sprintf(failMsg, index), fmt.Errorf(failMsg, index)
+			return logAndExit(failMsg, index, err)
 		}
 	}
-	return fmt.Sprintf(successMsg, len(urls)), nil
+	return logAndExit(successMsg, len(urls), nil)
+}
+
+func logAndExit(template string, data interface{}, err error) (string, error) {
+	msg := fmt.Sprintf(template, data)
+	fmt.Println(msg)
+	if err != nil {
+		err = fmt.Errorf(msg)
+	}
+	return msg, err
 }
 
 func hitURL(url string) error {
