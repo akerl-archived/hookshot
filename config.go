@@ -24,6 +24,10 @@ type target struct {
 
 type targetList map[string]target
 
+type config struct {
+	Targets targetList
+}
+
 func (t target) hit() error {
 	m := t.Method
 	if m == "" {
@@ -38,12 +42,12 @@ func (t target) hit() error {
 	return err
 }
 
-func loadConfig() (targetList, error) {
-	var tl targetList
+func loadConfig() (config, error) {
+	var c config
 
 	bucket, path, err := parseEnv()
 	if err != nil {
-		return tl, err
+		return c, err
 	}
 
 	client := s3Client()
@@ -53,15 +57,15 @@ func loadConfig() (targetList, error) {
 		Key:    aws.String(path),
 	})
 	if err != nil {
-		return tl, err
+		return c, err
 	}
 	body, err := ioutil.ReadAll(obj.Body)
 	if err != nil {
-		return tl, err
+		return c, err
 	}
 
-	err = yaml.Unmarshal(body, &tl)
-	return tl, err
+	err = yaml.Unmarshal(body, &c)
+	return c, err
 }
 
 func parseEnv() (string, string, error) {

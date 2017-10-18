@@ -11,17 +11,18 @@ const (
 	successMsg = "Success! Hit %d URLs"
 )
 
-var tl targetList
+var c config
 
 // Handle responds to lambda invocations by hitting all known URLs
 func Handle(_ interface{}, _ *runtime.Context) (string, error) {
-	for name, target := range tl {
+	t := c.Targets
+	for name, target := range t {
 		err := target.hit()
 		if err != nil {
 			return logAndExit(failMsg, name, err)
 		}
 	}
-	return logAndExit(successMsg, len(tl), nil)
+	return logAndExit(successMsg, len(t), nil)
 }
 
 func logAndExit(template string, data interface{}, err error) (string, error) {
@@ -35,7 +36,7 @@ func logAndExit(template string, data interface{}, err error) (string, error) {
 
 func init() {
 	var err error
-	tl, err = loadConfig()
+	c, err = loadConfig()
 	if err != nil {
 		panic(err)
 	}
