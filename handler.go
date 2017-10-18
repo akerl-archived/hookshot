@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	failMsg    = "Failed to hit URL %d"
+	failMsg    = "Failed to hit URL %s"
 	successMsg = "Success! Hit %d URLs"
 )
 
