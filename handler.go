@@ -2,44 +2,79 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"net/http"
+	"os"
 
-	"github.com/eawsy/aws-lambda-go-core/service/lambda/runtime"
+	"github.com/akerl/go-lambda/s3"
+	"github.com/aws/aws-lambda-go/lambda"
+	"gopkg.in/yaml.v2"
 )
 
-const (
-	failMsg    = "Failed to hit URL %s"
-	successMsg = "Success! Hit %d URLs"
-)
+type target struct {
+	URL    string `json:"url"`
+	Method string `json:"method,omitempty"`
+}
 
-var c config
+type config struct {
+	Targets map[string]target `json:"targets"`
+}
 
-// Handle responds to lambda invocations by hitting all known URLs
-func Handle(_ interface{}, _ *runtime.Context) (string, error) {
-	t := c.Targets
-	for name, target := range t {
-		err := target.hit()
+type targetList map[string]*http.Request
+
+var targets targetList
+
+func handler() error {
+	if len(targets) == 0 {
+		return fmt.Errorf("no targets found in config")
+	}
+
+	client := &http.Client{}
+
+	for name, req := range targets {
+		_, err := client.Do(req)
 		if err != nil {
-			return logAndExit(failMsg, name, err)
+			return fmt.Errorf("failed to hit url: %s", name)
 		}
 	}
-	return logAndExit(successMsg, len(t), nil)
+	log.Printf("success: hit %d urls", len(targets))
+	return nil
 }
 
-func logAndExit(template string, data interface{}, err error) (string, error) {
-	msg := fmt.Sprintf(template, data)
-	fmt.Println(msg)
-	if err != nil {
-		err = fmt.Errorf(msg)
+func loadConfig() {
+	bucket := os.Getenv("S3_BUCKET")
+	path := os.Getenv("S3_KEY")
+	if bucket == "" || path == "" {
+		log.Print("variables not provided")
+		return
 	}
-	return msg, err
-}
 
-func init() {
-	var err error
-	c, err = loadConfig()
+	obj, err := s3.GetObject(bucket, path)
 	if err != nil {
-		panic(err)
+		log.Print(err)
+		return
 	}
+
+	c := config{}
+	err = yaml.Unmarshal(obj, &c)
+	if err != nil {
+		log.Print(err)
+		return
+	}
+
+	tl := make(targetList)
+	for name, t := range c.Targets {
+		req, err := http.NewRequest(t.Method, t.URL, nil)
+		if err != nil {
+			log.Print(err)
+			return
+		}
+		tl[name] = req
+	}
+	targets = tl
 }
 
-func main() {}
+func main() {
+	loadConfig()
+	lambda.Start(handler)
+}
