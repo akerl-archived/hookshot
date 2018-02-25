@@ -44,6 +44,7 @@ func handler() error {
 func loadConfig() {
 	bucket := os.Getenv("S3_BUCKET")
 	path := os.Getenv("S3_KEY")
+	fmt.Printf("%+v\n", os.Environ())
 	if bucket == "" || path == "" {
 		log.Print("variables not provided")
 		return
