@@ -1,0 +1,3 @@
+PACKAGE = hookshot
+NAMESPACE = github.com/akerl
+OSLIST = linux

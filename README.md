@@ -7,8 +7,6 @@ hookshot
 
 Webhook invoker. Designed to replace [dock0/scheduled_build](https://github.com/dock0/scheduled_build) for hitting URLs when run.
 
-Packages golang binary with python shim using [eawsy/aws-lambda-go-shim](https://github.com/eawsy/aws-lambda-go-shim)
-
 ## Usage
 
 ## Installation
