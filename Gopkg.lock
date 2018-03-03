@@ -5,7 +5,7 @@
   branch = "master"
   name = "github.com/akerl/go-lambda"
   packages = ["s3"]
-  revision = "85a8202918ae6b2ff9c61a4c76ea66e3dd714913"
+  revision = "e820b15d0e5f7af1a5aa7730785014ba6aad4362"
 
 [[projects]]
   name = "github.com/aws/aws-lambda-go"
