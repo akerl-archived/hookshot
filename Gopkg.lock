@@ -5,7 +5,7 @@
   branch = "master"
   name = "github.com/akerl/go-lambda"
   packages = ["s3"]
-  revision = "6a424023bc2661c175480a6fbf9385c9a998b064"
+  revision = "85a8202918ae6b2ff9c61a4c76ea66e3dd714913"
 
 [[projects]]
   name = "github.com/aws/aws-lambda-go"
@@ -47,8 +47,8 @@
     "service/s3",
     "service/sts"
   ]
-  revision = "f7f1ee9550cc76ceea731d99c8dbe00a0c39f66d"
-  version = "v1.13.4"
+  revision = "aace5875a5c3b85a3902c6d72b9caed301d64cce"
+  version = "v1.13.8"
 
 [[projects]]
   name = "github.com/go-ini/ini"
