@@ -2,10 +2,10 @@
 
 
 [[projects]]
-  branch = "master"
   name = "github.com/akerl/go-lambda"
   packages = ["s3"]
-  revision = "e820b15d0e5f7af1a5aa7730785014ba6aad4362"
+  revision = "015eca41d013e4fa253a1652ce0477febeb72552"
+  version = "0.0.1"
 
 [[projects]]
   name = "github.com/aws/aws-lambda-go"
