@@ -4,8 +4,8 @@
 [[projects]]
   name = "github.com/akerl/go-lambda"
   packages = ["s3"]
-  revision = "656b965f85139d7793dd03dab54503eefd205fe0"
-  version = "0.0.9"
+  revision = "972b51e60a0dd1d2fd1606567553333b2689dd89"
+  version = "0.0.10"
 
 [[projects]]
   name = "github.com/aws/aws-lambda-go"
@@ -61,6 +61,12 @@
   name = "github.com/jmespath/go-jmespath"
   packages = ["."]
   revision = "0b12d6b5"
+
+[[projects]]
+  name = "gopkg.in/yaml.v2"
+  packages = ["."]
+  revision = "7f97868eec74b32b0982dd158a51a446d1da7eb5"
+  version = "v2.1.1"
 
 [solve-meta]
   analyzer-name = "dep"
