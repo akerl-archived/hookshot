@@ -4,11 +4,9 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
 
 	"github.com/akerl/go-lambda/s3"
 	"github.com/aws/aws-lambda-go/lambda"
-	"gopkg.in/yaml.v2"
 )
 
 type target struct {
@@ -42,21 +40,8 @@ func handler() error {
 }
 
 func loadConfig() {
-	bucket := os.Getenv("S3_BUCKET")
-	path := os.Getenv("S3_KEY")
-	if bucket == "" || path == "" {
-		log.Print("variables not provided")
-		return
-	}
-
-	obj, err := s3.GetObject(bucket, path)
-	if err != nil {
-		log.Print(err)
-		return
-	}
-
 	c := config{}
-	err = yaml.Unmarshal(obj, &c)
+	err := s3.GetConfigFromEnv(&c)
 	if err != nil {
 		log.Print(err)
 		return
