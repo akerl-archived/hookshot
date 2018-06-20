@@ -41,11 +41,15 @@ func handler() error {
 
 func loadConfig() {
 	c := config{}
-	err := s3.GetConfigFromEnv(&c)
+	cf, err := s3.GetConfigFromEnv(&c)
 	if err != nil {
 		log.Print(err)
 		return
 	}
+	cf.OnError = func(_ *ConfigFile, err error) {
+		log.Print(err)
+	}
+	cf.Autoreload(60)
 
 	tl := make(targetList)
 	for name, t := range c.Targets {
