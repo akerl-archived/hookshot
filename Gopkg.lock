@@ -4,8 +4,8 @@
 [[projects]]
   name = "github.com/akerl/go-lambda"
   packages = ["s3"]
-  revision = "6dda7b7c070b3adaaf51e2fddeb3c112f479c5fe"
-  version = "0.0.18"
+  revision = "1ae7f885102875375929551b4d605153c1ad294e"
+  version = "0.1.0"
 
 [[projects]]
   name = "github.com/aws/aws-lambda-go"
@@ -30,6 +30,7 @@
     "aws/credentials/ec2rolecreds",
     "aws/credentials/endpointcreds",
     "aws/credentials/stscreds",
+    "aws/csm",
     "aws/defaults",
     "aws/ec2metadata",
     "aws/endpoints",
@@ -40,6 +41,8 @@
     "internal/sdkrand",
     "internal/shareddefaults",
     "private/protocol",
+    "private/protocol/eventstream",
+    "private/protocol/eventstream/eventstreamapi",
     "private/protocol/query",
     "private/protocol/query/queryutil",
     "private/protocol/rest",
@@ -48,14 +51,14 @@
     "service/s3",
     "service/sts"
   ]
-  revision = "31a85efbe3bc741eb539d6310c8e66030b7c5cb7"
-  version = "v1.13.47"
+  revision = "f0bbc646e13bfc451409e960cf33239aabb8671a"
+  version = "v1.14.9"
 
 [[projects]]
   name = "github.com/go-ini/ini"
   packages = ["."]
-  revision = "6529cf7c58879c08d927016dde4477f18a0634cb"
-  version = "v1.36.0"
+  revision = "06f5f3d67269ccec1fe5fe4134ba6e982984f7f5"
+  version = "v1.37.0"
 
 [[projects]]
   name = "github.com/jmespath/go-jmespath"
@@ -71,6 +74,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "52009e9adcb7c75734f027fc87e0adc298f00a5e6dff26089a4438ba432757b1"
+  inputs-digest = "df1d76bdbacf7a8171b9a4ec4c2f39e07f06403f855b0da07eeefa04557f753a"
   solver-name = "gps-cdcl"
   solver-version = 1
