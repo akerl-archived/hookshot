@@ -46,7 +46,7 @@ func loadConfig() {
 		log.Print(err)
 		return
 	}
-	cf.OnError = func(_ *ConfigFile, err error) {
+	cf.OnError = func(_ *s3.ConfigFile, err error) {
 		log.Print(err)
 	}
 	cf.Autoreload(60)
