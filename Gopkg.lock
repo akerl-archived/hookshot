@@ -14,8 +14,8 @@
     "lambda/messages",
     "lambdacontext"
   ]
-  revision = "4d30d0ff60440c2d0480a15747c96ee71c3c53d4"
-  version = "v1.2.0"
+  revision = "e630af386f8aad6ec9fc899b951cf62d37cfe56f"
+  version = "v1.4.0"
 
 [[projects]]
   name = "github.com/aws/aws-sdk-go"
@@ -39,6 +39,7 @@
     "aws/signer/v4",
     "internal/sdkio",
     "internal/sdkrand",
+    "internal/sdkuri",
     "internal/shareddefaults",
     "private/protocol",
     "private/protocol/eventstream",
@@ -51,14 +52,14 @@
     "service/s3",
     "service/sts"
   ]
-  revision = "f0bbc646e13bfc451409e960cf33239aabb8671a"
-  version = "v1.14.9"
+  revision = "859b69a01f8cb52b639bd8c868b116144bddc74a"
+  version = "v1.15.9"
 
 [[projects]]
   name = "github.com/go-ini/ini"
   packages = ["."]
-  revision = "06f5f3d67269ccec1fe5fe4134ba6e982984f7f5"
-  version = "v1.37.0"
+  revision = "358ee7663966325963d4e8b2e1fbd570c5195153"
+  version = "v1.38.1"
 
 [[projects]]
   name = "github.com/jmespath/go-jmespath"
