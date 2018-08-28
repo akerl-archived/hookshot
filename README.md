@@ -1,7 +1,7 @@
 hookshot
 =========
 
-[![Build Status](https://img.shields.io/circleci/project/akerl/hookshot/master.svg)](https://circleci.com/gh/akerl/hookshot)
+[![Build Status](https://img.shields.io/travis/com/akerl/hookshot.svg)](https://travis-ci.com/akerl/hookshot)
 [![GitHub release](https://img.shields.io/github/release/akerl/hookshot.svg)](https://github.com/akerl/hookshot/releases)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-green.svg)](https://tldrlegal.com/license/mit-license)
 
