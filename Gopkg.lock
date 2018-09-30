@@ -2,22 +2,27 @@
 
 
 [[projects]]
+  digest = "1:df08f7bac97c5600da8abf64659bf10dde69ed43c8179e19b5310d3b7f0403b2"
   name = "github.com/akerl/go-lambda"
   packages = ["s3"]
+  pruneopts = "UT"
   revision = "1ae7f885102875375929551b4d605153c1ad294e"
   version = "0.1.0"
 
 [[projects]]
+  digest = "1:7637de64e2bad97a7b9d1665e9cb0f9b709b1ef28d09232da908ead542bf89f0"
   name = "github.com/aws/aws-lambda-go"
   packages = [
     "lambda",
     "lambda/messages",
-    "lambdacontext"
+    "lambdacontext",
   ]
+  pruneopts = "UT"
   revision = "2d482ef09017ae953b1e8d5a6ddac5b696663a3c"
   version = "v1.6.0"
 
 [[projects]]
+  digest = "1:b03d71ca2664bf579cf9a72e49ed3d21d16313e686bb12829431f63a8e68330b"
   name = "github.com/aws/aws-sdk-go"
   packages = [
     "aws",
@@ -50,31 +55,41 @@
     "private/protocol/restxml",
     "private/protocol/xml/xmlutil",
     "service/s3",
-    "service/sts"
+    "service/sts",
   ]
-  revision = "80ad2657c5ff975b642b1febb11c3fcfd747c057"
-  version = "v1.15.28"
+  pruneopts = "UT"
+  revision = "a8ff9e4804fc89c994b731b1c057640ab2aecff3"
+  version = "v1.15.45"
 
 [[projects]]
+  digest = "1:5abd6a22805b1919f6a6bca0ae58b13cef1f3412812f38569978f43ef02743d4"
   name = "github.com/go-ini/ini"
   packages = ["."]
+  pruneopts = "UT"
   revision = "5cf292cae48347c2490ac1a58fe36735fb78df7e"
   version = "v1.38.2"
 
 [[projects]]
+  digest = "1:e22af8c7518e1eab6f2eab2b7d7558927f816262586cd6ed9f349c97a6c285c4"
   name = "github.com/jmespath/go-jmespath"
   packages = ["."]
+  pruneopts = "UT"
   revision = "0b12d6b5"
 
 [[projects]]
+  digest = "1:342378ac4dcb378a5448dd723f0784ae519383532f5e70ade24132c4c8693202"
   name = "gopkg.in/yaml.v2"
   packages = ["."]
+  pruneopts = "UT"
   revision = "5420a8b6744d3b0345ab293f6fcba19c978f1183"
   version = "v2.2.1"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "df1d76bdbacf7a8171b9a4ec4c2f39e07f06403f855b0da07eeefa04557f753a"
+  input-imports = [
+    "github.com/akerl/go-lambda/s3",
+    "github.com/aws/aws-lambda-go/lambda",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1
