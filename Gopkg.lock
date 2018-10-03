@@ -2,12 +2,12 @@
 
 
 [[projects]]
-  digest = "1:df08f7bac97c5600da8abf64659bf10dde69ed43c8179e19b5310d3b7f0403b2"
+  digest = "1:2c73359f7de026bb96d5f00bea4e0d163108934589e49844c7abaf6fe728dc73"
   name = "github.com/akerl/go-lambda"
   packages = ["s3"]
   pruneopts = "UT"
-  revision = "1ae7f885102875375929551b4d605153c1ad294e"
-  version = "0.1.0"
+  revision = "3d505c32ffe120d3e8dab6c6e34e4ad92aa23c7a"
+  version = "0.2.3"
 
 [[projects]]
   digest = "1:7637de64e2bad97a7b9d1665e9cb0f9b709b1ef28d09232da908ead542bf89f0"
@@ -22,7 +22,7 @@
   version = "v1.6.0"
 
 [[projects]]
-  digest = "1:b03d71ca2664bf579cf9a72e49ed3d21d16313e686bb12829431f63a8e68330b"
+  digest = "1:8fba2026253919f58e3afc3a965269fb854987c602aa96db89463ad33783d43b"
   name = "github.com/aws/aws-sdk-go"
   packages = [
     "aws",
@@ -58,16 +58,24 @@
     "service/sts",
   ]
   pruneopts = "UT"
-  revision = "a8ff9e4804fc89c994b731b1c057640ab2aecff3"
-  version = "v1.15.45"
+  revision = "cfcda8304585604aabf1f7f8f7ce67b55029d0ca"
+  version = "v1.15.47"
 
 [[projects]]
-  digest = "1:5abd6a22805b1919f6a6bca0ae58b13cef1f3412812f38569978f43ef02743d4"
+  digest = "1:2cd7915ab26ede7d95b8749e6b1f933f1c6d5398030684e6505940a10f31cfda"
+  name = "github.com/ghodss/yaml"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "0ca9ea5df5451ffdf184b4428c902747c2c11cd7"
+  version = "v1.0.0"
+
+[[projects]]
+  digest = "1:b98e7574fc27ec166fb31195ec72c3bd0bffd73926d3612eb4c929bc5236f75b"
   name = "github.com/go-ini/ini"
   packages = ["."]
   pruneopts = "UT"
-  revision = "5cf292cae48347c2490ac1a58fe36735fb78df7e"
-  version = "v1.38.2"
+  revision = "7b294651033cd7d9e7f0d9ffa1b75ed1e198e737"
+  version = "v1.38.3"
 
 [[projects]]
   digest = "1:e22af8c7518e1eab6f2eab2b7d7558927f816262586cd6ed9f349c97a6c285c4"
