@@ -2,12 +2,12 @@
 
 
 [[projects]]
-  digest = "1:2c73359f7de026bb96d5f00bea4e0d163108934589e49844c7abaf6fe728dc73"
+  digest = "1:f70a2021cc3d645021d4dfc1843b7130c2e1b9234f3a8787d182bf841e8d078f"
   name = "github.com/akerl/go-lambda"
   packages = ["s3"]
   pruneopts = "UT"
-  revision = "3d505c32ffe120d3e8dab6c6e34e4ad92aa23c7a"
-  version = "0.2.3"
+  revision = "a5eb7e6f5f9ff3357a077cddd34f23d7e1b42ac5"
+  version = "0.3.0"
 
 [[projects]]
   digest = "1:1c44f05197d518973df6d9371d4783035dd07ec1cb2049a6e799a59b2cc429b4"
@@ -22,47 +22,35 @@
   version = "v1.8.0"
 
 [[projects]]
-  digest = "1:f6c5e66e3ef4aba538e5e71e23a975df703b28ef2a07519cbdbf1bc4f0ca14aa"
-  name = "github.com/aws/aws-sdk-go"
+  digest = "1:303a306cefbdb62f9f65e89e841624dff2acae2fc32639b0432b6d4a42d762fc"
+  name = "github.com/aws/aws-sdk-go-v2"
   packages = [
     "aws",
     "aws/awserr",
-    "aws/awsutil",
-    "aws/client",
-    "aws/client/metadata",
-    "aws/corehandlers",
-    "aws/credentials",
-    "aws/credentials/ec2rolecreds",
-    "aws/credentials/endpointcreds",
-    "aws/credentials/processcreds",
-    "aws/credentials/stscreds",
-    "aws/csm",
     "aws/defaults",
     "aws/ec2metadata",
+    "aws/ec2rolecreds",
+    "aws/endpointcreds",
     "aws/endpoints",
-    "aws/request",
-    "aws/session",
+    "aws/external",
     "aws/signer/v4",
+    "aws/stscreds",
+    "internal/awsutil",
     "internal/ini",
-    "internal/s3err",
-    "internal/sdkio",
-    "internal/sdkrand",
-    "internal/sdkuri",
-    "internal/shareddefaults",
+    "internal/sdk",
     "private/protocol",
-    "private/protocol/eventstream",
-    "private/protocol/eventstream/eventstreamapi",
     "private/protocol/query",
     "private/protocol/query/queryutil",
     "private/protocol/rest",
     "private/protocol/restxml",
+    "private/protocol/xml",
     "private/protocol/xml/xmlutil",
     "service/s3",
     "service/sts",
   ]
   pruneopts = "UT"
-  revision = "c4e0e593d5f18b478f17ff0e86b56d41a70ced2d"
-  version = "v1.16.2"
+  revision = "0143dbcf72cf30047f4830d714f7511e74d44034"
+  version = "v0.6.0"
 
 [[projects]]
   digest = "1:2cd7915ab26ede7d95b8749e6b1f933f1c6d5398030684e6505940a10f31cfda"
@@ -73,11 +61,11 @@
   version = "v1.0.0"
 
 [[projects]]
-  digest = "1:bb81097a5b62634f3e9fec1014657855610c82d19b9a40c17612e32651e35dca"
+  digest = "1:e22af8c7518e1eab6f2eab2b7d7558927f816262586cd6ed9f349c97a6c285c4"
   name = "github.com/jmespath/go-jmespath"
   packages = ["."]
   pruneopts = "UT"
-  revision = "c2b33e84"
+  revision = "0b12d6b5"
 
 [[projects]]
   digest = "1:4d2e5a73dc1500038e504a8d78b986630e3626dc027bc030ba5c75da257cdb96"
