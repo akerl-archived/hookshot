@@ -18,11 +18,11 @@
     "lambdacontext",
   ]
   pruneopts = "UT"
-  revision = "fb8f88d824489a878aee1e0badde7d8e129f8767"
-  version = "v1.7.0"
+  revision = "9e3676ee8ca83aee500682f382e10b9d03660093"
+  version = "v1.8.0"
 
 [[projects]]
-  digest = "1:9128d584328236cf18947c1130a7bef09b27ae0976640e25589cc0fe72fec9eb"
+  digest = "1:f6c5e66e3ef4aba538e5e71e23a975df703b28ef2a07519cbdbf1bc4f0ca14aa"
   name = "github.com/aws/aws-sdk-go"
   packages = [
     "aws",
@@ -34,6 +34,7 @@
     "aws/credentials",
     "aws/credentials/ec2rolecreds",
     "aws/credentials/endpointcreds",
+    "aws/credentials/processcreds",
     "aws/credentials/stscreds",
     "aws/csm",
     "aws/defaults",
@@ -60,8 +61,8 @@
     "service/sts",
   ]
   pruneopts = "UT"
-  revision = "66af558c91f83a793b4a0101f70742062982f611"
-  version = "v1.15.81"
+  revision = "c4e0e593d5f18b478f17ff0e86b56d41a70ced2d"
+  version = "v1.16.2"
 
 [[projects]]
   digest = "1:2cd7915ab26ede7d95b8749e6b1f933f1c6d5398030684e6505940a10f31cfda"
@@ -72,19 +73,19 @@
   version = "v1.0.0"
 
 [[projects]]
-  digest = "1:e22af8c7518e1eab6f2eab2b7d7558927f816262586cd6ed9f349c97a6c285c4"
+  digest = "1:bb81097a5b62634f3e9fec1014657855610c82d19b9a40c17612e32651e35dca"
   name = "github.com/jmespath/go-jmespath"
   packages = ["."]
   pruneopts = "UT"
-  revision = "0b12d6b5"
+  revision = "c2b33e84"
 
 [[projects]]
-  digest = "1:342378ac4dcb378a5448dd723f0784ae519383532f5e70ade24132c4c8693202"
+  digest = "1:4d2e5a73dc1500038e504a8d78b986630e3626dc027bc030ba5c75da257cdb96"
   name = "gopkg.in/yaml.v2"
   packages = ["."]
   pruneopts = "UT"
-  revision = "5420a8b6744d3b0345ab293f6fcba19c978f1183"
-  version = "v2.2.1"
+  revision = "51d6538a90f86fe93ac480b35f37b2be17fef232"
+  version = "v2.2.2"
 
 [solve-meta]
   analyzer-name = "dep"
